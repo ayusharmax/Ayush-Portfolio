@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="description" content="Ayush Sharma — AI Engineer in the making, developer, and aspiring entrepreneur." />
+  <title>Ayush Sharma | AI Engineer & Developer</title>
+  <style>
+    :root{--bg:#0b0d10;--panel:#111419;--text:#f3f4f6;--muted:#9ca3af;--line:rgba(255,255,255,.09);--accent:#e45a60;--accent-soft:rgba(228,90,96,.12);--max:1080px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+    header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:rgba(11,13,16,.88);backdrop-filter:blur(16px)}
+    nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font-size:15px;font-weight:750;letter-spacing:-.03em}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:25px;align-items:center;color:var(--muted);font-size:13px}.navlinks a:hover{color:var(--text)}.nav-cta{border:1px solid var(--line);padding:8px 13px;border-radius:8px;color:var(--text)!important}
+    .hero{padding:105px 0 82px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#d4d6db;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 14px rgba(228,90,96,.55)}
+    h1{margin:23px 0 18px;font-size:clamp(44px,7.6vw,78px);line-height:1.04;letter-spacing:-.065em;font-weight:760}h1 .highlight{color:var(--accent)}.hero p{max-width:650px;color:var(--muted);font-size:clamp(16px,2vw,18px);margin:0}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:9px;font-size:14px;font-weight:650;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;transition:transform .2s,border-color .2s}.btn:hover{transform:translateY(-2px);border-color:rgba(228,90,96,.55)}.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .hero-note{margin-top:48px;padding-top:19px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 28px;color:#858b96;font-size:12px}
+    section{padding:70px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.kicker{color:var(--accent);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+    h2{font-size:clamp(28px,4vw,39px);letter-spacing:-.045em;line-height:1.15;margin:7px 0 0}.section-desc{color:var(--muted);font-size:14px;max-width:420px;margin:0}
+    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:25px}.card p{margin:0;color:var(--muted)}.card p+p{margin-top:13px}.mini-label{color:#f0f1f3;font-size:13px;font-weight:700;margin-bottom:15px}
+    .facts{display:grid;gap:14px}.fact{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding-bottom:12px;font-size:13px}.fact:last-child{border:0;padding-bottom:0}.fact span:first-child{color:var(--muted)}.fact span:last-child{text-align:right;color:#e6e7eb}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.focus-card{min-height:175px}.number{font-size:12px;color:var(--accent);letter-spacing:.08em}.focus-card h3,.item h3{font-size:17px;margin:17px 0 8px;letter-spacing:-.02em}.focus-card p,.item p{color:var(--muted);font-size:13px;margin:0}
+    .tag-list{display:flex;flex-wrap:wrap;gap:9px}.tag{border:1px solid var(--line);background:var(--panel);color:#d2d5dc;border-radius:7px;padding:7px 11px;font-size:12px}.notice{color:var(--muted);font-size:12px;margin-top:17px}
+    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.item{min-height:190px;display:flex;flex-direction:column}.item .status{margin-top:auto;padding-top:23px;color:#a8adb7;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+    .contact-box{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;padding:30px;border:1px solid rgba(228,90,96,.25);border-radius:15px;background:linear-gradient(120deg,var(--accent-soft),rgba(17,20,25,.6) 58%)}.contact-box p{color:var(--muted);margin:10px 0 0;font-size:14px}
+    .contact-form{display:grid;gap:12px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:grid;gap:6px;font-size:12px;color:#d5d8df}input,textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:#0c0f13;color:var(--text);font:inherit;font-size:14px;padding:11px 12px;outline:none}input:focus,textarea:focus{border-color:var(--accent)}textarea{min-height:120px;resize:vertical}.form-status{font-size:13px;color:#d8dbe2;min-height:20px}
+    footer{border-top:1px solid var(--line);padding:24px 0;color:#818792;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:760px){.navlinks{gap:14px}.navlinks a:not(.nav-cta){display:none}.hero{padding:78px 0 58px}section{padding:54px 0}.section-head{display:block}.section-desc{margin-top:12px}.about-grid,.grid-3,.work-grid,.contact-box{grid-template-columns:1fr}.focus-card{min-height:auto}.contact-box{padding:24px}.field-row{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="#home">AYUSH<span>.</span></a><div class="navlinks"><a href="#about">About</a><a href="#focus">Focus</a><a href="#work">Work</a><a class="nav-cta" href="#contact">Contact ↗</a></div></nav></header>
+<main>
+<section class="hero" id="home" style="border-top:0"><div class="wrap">
+  <div class="eyebrow"><span class="dot"></span> Building my future in AI</div>
+  <h1>Hi, I'm Ayush.<br><span class="highlight">AI Engineer</span> in the making.</h1>
+  <p>BCA student, developer in progress, and aspiring entrepreneur. I'm learning how to turn ideas into useful technology — one project and one skill at a time.</p>
+  <div class="actions"><a class="btn primary" href="#work">Explore my journey ↓</a><a class="btn" href="#contact">Get in touch ↗</a></div>
+  <div class="hero-note"><span>Artificial Intelligence</span><span>Software Development</span><span>Entrepreneurship</span></div>
+</div></section>
+<section id="about"><div class="wrap"><div class="section-head"><div><div class="kicker">01 / About</div><h2>A little about me.</h2></div><p class="section-desc">Curious by nature. Focused on learning, building, and improving.</p></div>
+<div class="about-grid"><div class="card"><div class="mini-label">My direction</div><p>I'm Ayush Sharma, currently pursuing a Bachelor of Computer Applications (BCA). My goal is to grow into an AI Engineer and build something of my own as an entrepreneur.</p><p>Right now, I'm focused on strengthening my fundamentals, exploring AI and development, and building practical experience. This website will grow as I do.</p></div>
+<div class="card"><div class="mini-label">Quick facts</div><div class="facts"><div class="fact"><span>Education</span><span>BCA</span></div><div class="fact"><span>Career goal</span><span>AI Engineer</span></div><div class="fact"><span>Long-term goal</span><span>Entrepreneur</span></div><div class="fact"><span>Currently</span><span>Learning & building</span></div></div></div></div></div></section>
+<section id="focus"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / Focus</div><h2>What I'm working toward.</h2></div><p class="section-desc">A few areas I'm interested in developing further.</p></div>
+<div class="grid-3"><article class="card focus-card"><div class="number">01</div><h3>Artificial Intelligence</h3><p>Understanding AI concepts and learning how intelligent applications are built.</p></article><article class="card focus-card"><div class="number">02</div><h3>Development</h3><p>Building strong programming fundamentals and turning ideas into working projects.</p></article><article class="card focus-card"><div class="number">03</div><h3>Entrepreneurship</h3><p>Exploring problems worth solving and the process of building useful products.</p></article></div></div></section>
+<section id="skills"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / Skills</div><h2>Learning stack.</h2></div><p class="section-desc">I'll add specific technologies here as I confirm the tools and skills I use.</p></div>
+<div class="tag-list"><span class="tag">AI & Machine Learning — exploring</span><span class="tag">Programming fundamentals — developing</span><span class="tag">Software development — learning</span></div><p class="notice">No inflated claims — this section can be updated with your real skills and proficiency levels.</p></div></section>
+<section id="work"><div class="wrap"><div class="section-head"><div><div class="kicker">04 / Work</div><h2>The journey starts here.</h2></div><p class="section-desc">A space for real work as projects and milestones take shape.</p></div>
+<div class="work-grid" id="projects-list"><article class="card item"><div class="number">PROJECTS</div><h3>Projects coming soon</h3><p>I'll showcase practical projects here as I build and finish them.</p><div class="status">In progress</div></article><article class="card item"><div class="number">RESEARCH</div><h3>Ideas & research</h3><p>Notes, experiments, and research will be added when there's work to share.</p><div class="status">Future updates</div></article><article class="card item"><div class="number">MILESTONES</div><h3>Learning milestones</h3><p>Courses, certifications, and achievements will appear here when completed.</p><div class="status">Growing over time</div></article></div></div></section>
+<section id="contact"><div class="wrap"><div class="contact-box"><div><div class="kicker">05 / Contact</div><h2>Let's connect.</h2><p>Have an idea, a learning resource, or an opportunity to share? Send me a message using the form. Your message is saved by the backend.</p></div>
+<form class="contact-form" id="contact-form">
+<div class="field-row"><label>Name<input name="name" required minlength="2" maxlength="80" autocomplete="name" placeholder="Your name"></label><label>Email<input name="email" required type="email" autocomplete="email" placeholder="you@example.com"></label></div>
+<label>Subject<input name="subject" required minlength="2" maxlength="120" placeholder="What is this about?"></label>
+<label>Message<textarea name="message" required minlength="10" maxlength="3000" placeholder="Write your message..."></textarea></label>
+<div class="actions" style="margin-top:0"><button class="btn primary" id="submit-btn" type="submit">Send message ↗</button></div><div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+</form></div></div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Ayush Sharma</span><span>Learning today. Building for tomorrow.</span></div></footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const form = document.getElementById('contact-form');
+const statusBox = document.getElementById('form-status');
+const submitButton = document.getElementById('submit-btn');
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  statusBox.textContent = 'Sending…';
+  submitButton.disabled = true;
+  const data = Object.fromEntries(new FormData(form).entries());
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.detail || 'Could not send your message.');
+    statusBox.textContent = 'Message saved successfully. Thanks for reaching out!';
+    form.reset();
+  } catch (error) {
+    statusBox.textContent = 'Could not send message. Make sure the website backend is running, then try again.';
+  } finally {
+    submitButton.disabled = false;
+  }
+});
+async function loadProjects() {
+  try {
+    const response = await fetch('/api/projects');
+    if (!response.ok) return;
+    const projects = await response.json();
+    if (!projects.length) return;
+    const list = document.getElementById('projects-list');
+    list.replaceChildren();
+    projects.forEach(project => {
+      const card = document.createElement('article');
+      card.className = 'card item';
+      const label = document.createElement('div'); label.className = 'number'; label.textContent = 'PROJECT';
+      const title = document.createElement('h3'); title.textContent = project.title;
+      const description = document.createElement('p'); description.textContent = project.description;
+      const status = document.createElement('div'); status.className = 'status'; status.textContent = project.tech_stack || 'Project';
+      card.append(label, title, description, status);
+      if (project.project_url) {
+        const link = document.createElement('a'); link.className = 'btn'; link.href = project.project_url;
+        link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = 'View project ↗'; link.style.marginTop = '14px'; card.append(link);
+      }
+      list.append(card);
+    });
+  } catch (_) { /* Keep the static fallback content if the API is unavailable. */ }
+}
+loadProjects();
+</script>
+</body>
+</html>
