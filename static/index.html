@@ -1,19 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ayush Sharma — Software Engineer &amp; Founder</title>
+
+  <title>Ayush Sharma - Software Engineer &amp; Founder | AI Researcher & Developer</title>
+
   <meta name="description" content="Ayush Sharma is a software engineer focused on AI, full-stack development, backend systems, and building practical software products.">
   <meta name="author" content="Ayush Sharma">
   <meta name="robots" content="index, follow">
+
   <link rel="canonical" href="https://ayushsharma.onrender.com">
+  <link rel="icon" href="ayush.jpeg">
+
   <meta property="og:title" content="Ayush Sharma — Software Engineer &amp; Founder">
   <meta property="og:description" content="Software engineer focused on AI, full-stack development, backend systems, and practical software products.">
   <meta property="og:url" content="https://ayushsharma.onrender.com">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/static/ayush.jpeg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
@@ -29,7 +35,6 @@
       --pill: #27272a;
       --accent: #0ea5e9;
       --nav-bg: rgba(10, 10, 12, 0.82);
-      --shadow: rgba(0, 0, 0, 0.15);
     }
 
     :root[data-theme="light"] {
@@ -42,7 +47,6 @@
       --pill: #f0f0f2;
       --accent: #087fb5;
       --nav-bg: rgba(255, 255, 255, 0.86);
-      --shadow: rgba(0, 0, 0, 0.04);
     }
 
     * {
@@ -93,6 +97,8 @@
       width: min(100% - 48px, 896px);
       margin-inline: auto;
     }
+
+    /* NAVIGATION */
 
     .navbar {
       position: sticky;
@@ -151,6 +157,7 @@
 
     .nav-links a:hover {
       color: var(--text);
+      opacity: 1;
     }
 
     .icon-button {
@@ -165,7 +172,7 @@
       border: 0;
       border-radius: 8px;
       cursor: pointer;
-      transition: color 0.2s ease, background 0.2s ease;
+      transition: color 0.2s ease, background-color 0.2s ease;
     }
 
     .icon-button:hover {
@@ -185,10 +192,7 @@
       flex-shrink: 0;
     }
 
-    .menu-toggle {
-      display: none;
-    }
-
+    .menu-toggle,
     .mobile-nav {
       display: none;
     }
@@ -200,6 +204,8 @@
     section {
       scroll-margin-top: 90px;
     }
+
+    /* HOME */
 
     .hero {
       display: grid;
@@ -246,6 +252,8 @@
       background: var(--pill);
     }
 
+    /* GENERAL SECTIONS */
+
     .section {
       padding: 54px 0;
       border-top: 1px solid var(--line);
@@ -254,7 +262,8 @@
 
     .section-title {
       margin: 0 0 26px;
-      font-size: clamp(28px, 4vw, 36px);
+      font-size: 30px;
+      font-weight: 700;
     }
 
     .section-content {
@@ -270,73 +279,121 @@
       margin-bottom: 0;
     }
 
-    .skills-grid {
+    /* SKILLS AND CERTIFICATIONS */
+
+    .skills-cert-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 38px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    .skills-column > .section-title,
+    .certifications-column > .section-title {
+      margin: 0 0 20px;
+      font-size: 28px;
+      line-height: 1.22;
+      font-weight: 700;
+    }
+
+    /* LANGUAGES AND TECHNOLOGIES */
+
+    .skills-column h4 {
+      margin: 0 0 14px;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .skill-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skill-group {
+      margin: 0;
+      padding: 0;
     }
 
     .skill-group h3 {
-      margin: 0 0 16px;
-      font-size: 18px;
+      display: none;
     }
 
     .pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
+      gap: 7px;
     }
 
     .pills span {
       display: inline-block;
-      padding: 5px 12px;
+      padding: 3px 10px;
       border-radius: 999px;
       background: var(--pill);
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
+      font-size: 11px;
+      line-height: 1.6;
+      white-space: nowrap;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+    /* CERTIFICATIONS: SLIGHTLY LOWER FOR BETTER ALIGNMENT */
+
+    .certifications-column {
+      padding-top: 4px;
     }
 
-    .card {
+    .certification-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .certification-item {
       display: block;
-      min-width: 0;
-      padding: 20px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      box-shadow: 0 8px 24px var(--shadow);
-      transition: border-color 0.2s ease, background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .card-title {
-      display: block;
-      color: var(--accent);
-      font-weight: 600;
-      line-height: 1.5;
-    }
-
-    .card-meta {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
+      color: var(--text);
       font-size: 13px;
+      line-height: 1.45;
+      font-weight: 400;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .certification-item:visited,
+    .certification-item:hover,
+    .certification-item:active {
+      color: var(--text);
+      opacity: 1;
+      text-decoration: none;
+    }
+
+    .certification-meta {
+      display: block;
+      margin-top: 1px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 400;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding-top: 54px;
+      padding-bottom: 58px;
+    }
+
+    .contact-section .section-title {
+      margin-bottom: 24px;
+      font-size: 30px;
     }
 
     .contact-links {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -344,23 +401,28 @@
     .contact-links a {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
       color: var(--muted);
+      font-size: 0;
+      line-height: 1;
     }
 
     .contact-links a:hover {
-      color: var(--accent);
+      color: var(--text);
+      opacity: 1;
     }
 
     .contact-links svg {
-      width: 21px;
-      height: 21px;
+      width: 19px;
+      height: 19px;
       fill: none;
       stroke: currentColor;
       stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
+
+    /* FOOTER */
 
     .footer {
       margin-top: auto;
@@ -374,6 +436,8 @@
       font-size: 12px;
       margin: 0;
     }
+
+    /* MOBILE */
 
     @media (max-width: 760px) {
       .container,
@@ -408,6 +472,7 @@
       .mobile-nav a {
         padding: 10px 0;
         color: var(--muted);
+        font-size: 14px;
       }
 
       .hero {
@@ -428,13 +493,32 @@
         padding: 42px 0;
       }
 
-      .skills-grid {
+      .skills-cert-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 34px;
       }
 
-      .card-grid {
-        grid-template-columns: 1fr;
+      .skills-column > .section-title,
+      .certifications-column > .section-title {
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+
+      .certifications-column {
+        padding-top: 0;
+      }
+
+      .skills-column h4 {
+        margin-bottom: 14px;
+      }
+
+      .skill-groups {
+        gap: 8px;
+      }
+
+      .contact-section {
+        padding-top: 42px;
+        padding-bottom: 48px;
       }
     }
 
@@ -452,18 +536,23 @@
 <body>
   <div class="site-shell">
 
+    <!-- NAVIGATION -->
+
     <header class="navbar">
       <div class="nav-inner">
 
+        
+
         <nav class="nav-links" aria-label="Main navigation">
-          <a href="/#home">Home</a>
-          <a href="/#about">About</a>
-          <a href="/#skills">Skills</a>
-          <a href="/resume">Resume</a>
-          <a href="/#contact">Contact</a>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="resume.html">Resume</a>
+          <a href="#contact">Contact</a>
         </nav>
 
         <div class="nav-actions">
+
           <button
             id="themeToggle"
             class="icon-button"
@@ -488,20 +577,22 @@
               <path d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
-        </div>
 
+        </div>
       </div>
 
       <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
-        <a href="/#home">Home</a>
-        <a href="/#about">About</a>
-        <a href="/#skills">Skills</a>
-        <a href="/resume">Resume</a>
-        <a href="/#contact">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="resume.html">Resume</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main class="container">
+
+      <!-- HOME -->
 
       <section id="home" class="hero">
         <div>
@@ -518,7 +609,7 @@
 
         <div class="hero-image">
           <img
-            src="/static/ayush.jpeg"
+            src="ayush.jpeg"
             alt="Ayush Sharma"
             width="230"
             height="230"
@@ -527,10 +618,13 @@
         </div>
       </section>
 
+      <!-- ABOUT -->
+
       <section id="about" class="section">
         <h2 class="section-title">About</h2>
 
         <div class="section-content">
+
           <p>
             I am a Software Engineer focused on artificial intelligence and
             building software that solves real-world problems. I am interested
@@ -576,98 +670,125 @@
             strengthened my interest in esports, team coordination, and the
             discipline required to perform at a higher level.
           </p>
+
         </div>
       </section>
+
+      <!-- SKILLS AND CERTIFICATIONS -->
 
       <section id="skills" class="section">
-        <h2 class="section-title">Skills</h2>
 
-        <div class="skills-grid">
+        <div class="skills-cert-grid">
 
-          <div class="skill-group">
-            <h3>Languages &amp; Technologies</h3>
+          <!-- SKILLS -->
 
-            <div class="pills">
-              <span>JavaScript</span>
-              <span>TypeScript</span>
-              <span>Python</span>
-              <span>Go</span>
-              <span>Java</span>
-              <span>React</span>
-              <span>Next.js</span>
-              <span>Node.js</span>
-              <span>PostgreSQL</span>
-              <span>MongoDB</span>
-              <span>Docker</span>
-              <span>AWS</span>
-              <span>Git</span>
+          <div class="skills-column">
+            <h2 class="section-title">Skills</h2>
+            <h4>Languages &amp; Technologies</h4>
+
+            <div class="skill-groups">
+
+              <div class="skill-group">
+                <div class="pills">
+                  <span>JavaScript</span>
+                  <span>TypeScript</span>
+                  <span>Python</span>
+                  <span>Go</span>
+                  <span>Java</span>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <div class="pills">
+                  <span>React</span>
+                  <span>Next.js</span>
+                  <span>Node.js</span>
+                  <span>PostgreSQL</span>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <div class="pills">
+                  <span>MongoDB</span>
+                  <span>Docker</span>
+                  <span>AWS</span>
+                  <span>Git</span>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <div class="skill-group">
-            <h3>Areas of Interest</h3>
+          <!-- CERTIFICATIONS -->
 
-            <div class="pills">
-              <span>Full-Stack Development</span>
-              <span>Backend Engineering</span>
-              <span>System Design</span>
-              <span>Applied AI</span>
-              <span>Automation</span>
-              <span>Security Research</span>
+          <div class="certifications-column" id="certifications">
+            <h2 class="section-title">Certifications</h2>
+
+            <div class="certification-list">
+
+              <a
+                class="certification-item"
+                href="https://verify.skilljar.com/c/qejtxto64dzr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Claude with the Anthropic API
+                <span class="certification-meta">
+                  Anthropic • 2026
+                </span>
+              </a>
+
+              <a
+                class="certification-item"
+                href="https://www.credly.com/badges/496c2dcd-6a9b-4b9a-bc76-558f5fb11370"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Getting Started with Artificial Intelligence
+                <span class="certification-meta">
+                  IBM SkillsBuild • 2026
+                </span>
+              </a>
+
             </div>
           </div>
 
         </div>
       </section>
 
-      <section id="certifications" class="section">
-        <h2 class="section-title">Certifications</h2>
+      <!-- CONTACT -->
 
-        <div class="card-grid">
+      <section id="contact" class="section contact-section">
 
-          <a
-            class="card"
-            href="https://verify.skilljar.com/c/qejtxto64dzr"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="card-title">Claude with the Anthropic API</span>
-            <span class="card-meta">Anthropic • 2026</span>
-          </a>
-
-          <a
-            class="card"
-            href="https://www.credly.com/badges/496c2dcd-6a9b-4b9a-bc76-558f5fb11370"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="card-title">
-              Getting Started with Artificial Intelligence
-            </span>
-            <span class="card-meta">IBM SkillsBuild • 2026</span>
-          </a>
-
-        </div>
-      </section>
-
-      <section id="contact" class="section">
         <h2 class="section-title">Contact</h2>
 
         <div class="contact-links">
 
-          <a href="mailto:ayusharma.me@gmail.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-              <path d="m3 7 9 6 9-6"></path>
-            </svg>
-            Email
-          </a>
+          
+
+
+<a
+  href="https://mail.google.com/mail/?view=cm&to=ayusharma.me@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  title="Email"
+  aria-label="Email"
+
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+    <path d="m3 7 9 6 9-6"></path>
+  </svg>
+  Email
+</a>
+
 
           <a
             href="https://github.com/ayusharmax"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
+            title="GitHub"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5a3 3 0 0 0-.8-2.3c2.8-.3 5.8-1.4 5.8-6.2a4.8 4.8 0 0 0-1.3-3.3 4.5 4.5 0 0 0-.1-3.3s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.5 4.5 0 0 0-.1 3.3A4.8 4.8 0 0 0 4 9.7c0 4.8 3 5.9 5.8 6.2a3 3 0 0 0-.8 2.3V21"></path>
@@ -680,6 +801,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
+            title="LinkedIn"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -694,11 +816,15 @@
 
     </main>
 
+    <!-- FOOTER -->
+
     <footer class="footer">
       <p>© 2026 Ayush Sharma. All rights reserved.</p>
     </footer>
 
   </div>
+
+  <!-- THEME AND MOBILE NAVIGATION -->
 
   <script>
     (() => {
@@ -708,24 +834,29 @@
       const mobileNav = document.getElementById("mobileNav");
 
       const sunIcon = `
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <circle cx="12" cy="12" r="4"></circle>
-    <path d="M12 2v2"></path>
-    <path d="M12 20v2"></path>
-    <path d="m4.93 4.93 1.41 1.41"></path>
-    <path d="m17.66 17.66 1.41 1.41"></path>
-    <path d="M2 12h2"></path>
-    <path d="M20 12h2"></path>
-    <path d="m6.34 17.66-1.41 1.41"></path>
-    <path d="m19.07 4.93-1.41 1.41"></path>
-  </svg>
-`;
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+      `;
 
       const moonIcon = `
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.463.402.807a6.5 6.5 0 0 0 8.268 8.268c.344-.215.829-.003.803.397Z"></path>
-  </svg>
-`;
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.463.402.807a6.5 6.5 0 0 0 8.268 8.268c.344-.215.829-.003.803.397Z"></path>
+        </svg>
+      `;
+
+      const menuIcon = `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      `;
+
+      const closeIcon = `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12"></path>
+        </svg>
+      `;
 
       function setTheme(theme) {
         root.dataset.theme = theme;
@@ -748,7 +879,7 @@
         try {
           localStorage.setItem("theme", theme);
         } catch (error) {
-          // Storage may be unavailable.
+          // Continue even if local storage is unavailable.
         }
       }
 
@@ -757,7 +888,7 @@
       try {
         savedTheme = localStorage.getItem("theme") || "dark";
       } catch (error) {
-        // Keep the default theme.
+        // Dark theme is the default.
       }
 
       setTheme(savedTheme === "light" ? "light" : "dark");
@@ -782,17 +913,7 @@
             isOpen ? "Close menu" : "Open menu"
           );
 
-          menuButton.innerHTML = isOpen
-            ? `
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18 6 6 18M6 6l12 12"></path>
-              </svg>
-            `
-            : `
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            `;
+          menuButton.innerHTML = isOpen ? closeIcon : menuIcon;
         });
 
         mobileNav.querySelectorAll("a").forEach(link => {
@@ -801,17 +922,11 @@
 
             menuButton.setAttribute("aria-expanded", "false");
             menuButton.setAttribute("aria-label", "Open menu");
-
-            menuButton.innerHTML = `
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            `;
+            menuButton.innerHTML = menuIcon;
           });
         });
       }
 
-      // Scroll to the correct section when opening /#section.
       function scrollToHash() {
         if (!window.location.hash) {
           return;
@@ -827,18 +942,12 @@
           return;
         }
 
-        if (
-          window.matchMedia(
+        target.scrollIntoView({
+          behavior: window.matchMedia(
             "(prefers-reduced-motion: reduce)"
-          ).matches
-        ) {
-          target.scrollIntoView();
-        } else {
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        }
+          ).matches ? "auto" : "smooth",
+          block: "start"
+        });
       }
 
       if (document.readyState === "complete") {
@@ -852,5 +961,6 @@
       }
     })();
   </script>
+
 </body>
 </html>

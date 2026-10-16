@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Ayush Sharma - Software Engineer &amp; Founder</title>
+  <title>Ayush Sharma - Software Engineer &amp; Founder | AI Researcher & Developer</title>
 
   <link rel="stylesheet" href="/static/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
-
-  <link rel="icon" type="image/jpeg" href="/static/ayush.jpeg?v=2">
+   
+  <link rel="canonical" href="https://ayushsharma.onrender.com">
+  <link rel="icon" href="ayush.jpeg">
+  
   <style>
     :root {
       --bg: #0a0a0b;
@@ -142,7 +144,9 @@
     }
 
     .resume-download {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
       font-weight: 600;
     }
 
@@ -155,15 +159,41 @@
       min-width: 0;
     }
 
+    /* Consistent alignment for every heading icon */
+    .resume-card h2,
+    .resume-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .resume-card h2 {
       font: 600 22px/1.3 Outfit, sans-serif;
-      margin: 0 0 20px;
+      margin: 0 0 18px;
     }
 
     .resume-card h3 {
       color: var(--text);
       font: 600 17px/1.4 Outfit, sans-serif;
-      margin: 24px 0 10px;
+      margin: 22px 0 9px;
+    }
+
+    .resume-card h2 svg,
+    .resume-card h3 svg,
+    .resume-download svg {
+      display: block;
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      position: relative;
+      top: 0;
+      vertical-align: middle;
+    }
+
+    .resume-card h3 svg {
+      flex-basis: 16px;
+      width: 16px;
+      height: 16px;
     }
 
     .resume-card p {
@@ -179,7 +209,7 @@
     }
 
     .resume-card li {
-      margin-bottom: 7px;
+      margin-bottom: 6px;
     }
 
     .resume-details {
@@ -209,14 +239,14 @@
       font-weight: 600;
     }
 
-    /* ===== Education ===== */
-   .edu-top {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px 22px;   /* badge aur BCA ke beech thoda sa space */
-  margin: 0 0 12px;
-}
+    /* Education */
+    .edu-top {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px 22px;
+      margin: 0 0 12px;
+    }
 
     .edu-badge {
       display: inline-block;
@@ -237,21 +267,20 @@
       line-height: 1.4;
     }
 
-    
     .edu-uni {
-  color: var(--muted);
-  font-size: 14px;      /* Maharishi wali line chhoti */
-  font-weight: 500;
-  margin: 0 0 12px;
-  line-height: 1.5;
-}
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0 0 12px;
+      line-height: 1.5;
+    }
 
-.edu-line {
-  color: var(--muted);
-  font-size: 13px;      /* Coursework aur Focused dono chhoti aur same size */
-  line-height: 1.6;
-  margin: 0 0 6px;
-}
+    .edu-line {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0 0 6px;
+    }
 
     .certification-list {
       display: flex;
@@ -347,217 +376,279 @@
 </head>
 
 <body>
+  <header class="resume-navbar">
+    <nav class="resume-nav-inner" aria-label="Main navigation">
+      <a class="resume-logo" href="/static/index.html#home"></a>
 
+      <div class="resume-nav-links">
+        <a href="./index.html#home">Home</a>
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#skills">Skills</a>
+        <a href="./resume.html" aria-current="page">Resume</a>
+        <a href="./index.html#contact">Contact</a>
+      </div>
 
-<header class="resume-navbar">
-  <nav class="resume-nav-inner" aria-label="Main navigation">
+      <div class="nav-actions">
+        <button
+          id="themeToggle"
+          class="icon-button"
+          type="button"
+          aria-label="Switch to light theme"
+          title="Switch theme"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-    <a class="resume-logo" href="/static/index.html#home">
-      Ayush Sharma
-    </a>
-
-    <div class="resume-nav-links">
-      <a href="/static/index.html#home">Home</a>
-      <a href="/static/index.html#about">About</a>
-      <a href="/static/index.html#skills">Skills</a>
-      <a href="/static/resume.html" aria-current="page">Resume</a>
-      <a href="/static/index.html#contact">Contact</a>
-    </div>
-
-    <div class="nav-actions">
-      <button
-        id="themeToggle"
-        class="icon-button"
-        type="button"
-        aria-label="Switch to light theme"
-        title="Switch theme"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+  <main class="resume-container">
+    <section class="resume-heading">
+      <h1>Resume</h1>
+      <p>Software Engineer &amp; Founder</p>
+      <a class="resume-download" href="AYUSH_RESUME.pdf" download="Ayush Sharma Resume.pdf">
+        Download
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" x2="8" y1="13" y2="13"></line>
+          <line x1="16" x2="8" y1="17" y2="17"></line>
+          <line x1="10" x2="8" y1="9" y2="9"></line>
         </svg>
-      </button>
-    </div>
-
-  </nav>
-</header>
-
-
-<main class="resume-container">
-
-  <section class="resume-heading">
-    <h1>Resume</h1>
-    <p>Software Engineer &amp; Founder</p>
-    <a class="resume-download" href="/static/AYUSH_RESUME.pdf" download="Ayush Sharma Resume.pdf">Download ↓</a>
-  </section>
-
-  <section class="resume-card">
-    <h2>Contact Information</h2>
-
-    <div class="resume-details">
-      <span>Name:</span>
-      <strong>AYUSH SHARMA</strong>
-
-      <span>Phone:</span>
-      <strong>7018974263</strong>
-
-      <span>Email:</span>
-      <strong><a href="mailto:ayusharma.me@gmail.com">ayusharma.me@gmail.com</a></strong>
-
-      <span>Location:</span>
-      <strong>Delhi, India</strong>
-
-      <span>Website:</span>
-      <strong><a href="https://ayushsharma.onrender.com">ayushsharma.onrender.com</a></strong>
-
-      <span>LinkedIn:</span>
-      <strong><a href="https://linkedin.com/in/ayusharma13">linkedin.com/in/ayusharma13</a></strong>
-
-      <span>GitHub:</span>
-      <strong><a href="https://github.com/ayusharmax">github.com/ayusharmax</a></strong>
-    </div>
-  </section>
-
-  <!-- Education Card -->
-  <section class="resume-card">
-    <h2>Education</h2>
-
-    <div class="edu-top">
-      <span class="edu-badge">AUG 2025 – PRESENT</span>
-      <span class="edu-degree">Bachelor of Computer Applications (BCA)</span>
-    </div>
-
-    <div class="edu-uni">Maharishi Dayanand University, Rohtak, India</div>
-
-    <div class="edu-line">Coursework: Programming in C, Web Development, Data Structures and Computer Networks</div>
-    <div class="edu-line">Focused on independent projects in backend systems, applied AI, and full-stack engineering</div>
-  </section>
-
-  <!-- Technical Skills Card -->
-  <section class="resume-card">
-    <h2>Technical Skills</h2>
-
-    <h3>Full-Stack &amp; Backend Engineering</h3>
-    <ul>
-      <li>Full-Stack Web Development (MERN)</li>
-      <li>React.js and Next.js</li>
-      <li>Node.js and Express.js</li>
-      <li>RESTful API Design</li>
-      <li>Authentication and Authorization (JWT, role-based access)</li>
-      <li>Database Design and Integration (MongoDB SQL)</li>
-      <li>System Design for scalable web applications</li>
-    </ul>
-
-    <h3>Programming Languages</h3>
-    <ul>
-      <li>JavaScript</li>
-      <li>TypeScript</li>
-      <li>Python</li>
-      <li>C++</li>
-    </ul>
-
-    <h3>Artificial Intelligence &amp; Automation</h3>
-    <ul>
-      <li>Artificial Intelligence (AI)</li>
-      <li>AI Automation and Workflow Design</li>
-      <li>LLM-based Systems</li>
-      <li>AI Security and Model Risk Awareness</li>
-    </ul>
-
-    <h3>Tools &amp; Technologies</h3>
-    <ul>
-      <li>Git and GitHub</li>
-      <li>MongoDB and SQL / SQLite</li>
-      <li>API Testing and Debugging Tools</li>
-      <li>Cloud Deployment</li>
-    </ul>
-
-    <h3>Engineering &amp; Professional Skills</h3>
-    <ul>
-      <li>Systems Thinking</li>
-      <li>Production Debugging and Error Handling</li>
-      <li>Performance Optimization</li>
-      <li>Research and Technical Writing</li>
-      <li>Client and Project Management</li>
-      <li>Product-driven Engineering</li>
-    </ul>
-  </section>
-
-  <!-- Certifications Card -->
-  <section class="resume-card" id="certifications">
-    <h2>Certifications</h2>
-
-    <div class="certification-list">
-      <a
-        class="certification-link"
-        href="https://verify.skilljar.com/c/qejtxto64dzr"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span class="certification-title">Claude with the Anthropic API</span>
-        <span class="certification-meta">Anthropic • 2026</span>
       </a>
+    </section>
 
-      <a
-        class="certification-link"
-        href="https://www.credly.com/badges/496c2dcd-6a9b-4b9a-bc76-558f5fb11370"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <span class="certification-title">Getting Started with Artificial Intelligence</span>
-        <span class="certification-meta">IBM SkillsBuild • 2026</span>
-      </a>
-    </div>
-  </section>
+    <section class="resume-card">
+      <h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0ea5e9">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        Contact Information
+      </h2>
 
-  <section class="resume-card">
-    <h2>Languages</h2>
-    <p><strong>English:</strong> Native / Fluent</p>
-    <p><strong>Hindi:</strong> Native</p>
-  </section>
+      <div class="resume-details">
+        <span>Name:</span>
+        <strong>AYUSH SHARMA</strong>
 
-</main>
+        <span>Phone:</span>
+        <strong>7018974263</strong>
 
-<footer class="resume-footer">
-  © 2026 Ayush Sharma. All rights reserved.
-</footer>
+        <span>Email:</span>
+        <strong><a href="mailto:ayusharma.me@gmail.com">ayusharma.me@gmail.com</a></strong>
 
-<script>
-  const themeButton = document.getElementById("themeToggle");
-  const root = document.documentElement;
+        <span>Location:</span>
+        <strong>Delhi, India</strong>
 
-  function setTheme(theme) {
-    const light = theme === "light";
+        <span>Website:</span>
+        <strong><a href="https://ayushsharma.onrender.com">ayushsharma.onrender.com</a></strong>
 
-    root.dataset.theme = theme;
-    root.style.setProperty("--bg", light ? "#f8fafc" : "#0a0a0b");
-    root.style.setProperty("--text", light ? "#111827" : "#f5f5f5");
-    root.style.setProperty("--muted", light ? "#64748b" : "#a1a1aa");
-    root.style.setProperty("--line", light ? "#e2e8f0" : "#27272a");
-    root.style.setProperty("--card", light ? "#ffffff" : "#0a0a0b");
+        <span>LinkedIn:</span>
+        <strong><a href="https://linkedin.com/in/ayusharma13">linkedin.com/in/ayusharma13</a></strong>
 
-    document.querySelector(".resume-navbar").style.background =
-      light ? "rgba(248, 250, 252, 0.92)" : "rgba(10, 10, 12, 0.88)";
+        <span>GitHub:</span>
+        <strong><a href="https://github.com/ayusharmax">github.com/ayusharmax</a></strong>
+      </div>
+    </section>
 
-    themeButton.setAttribute(
-      "aria-label",
-      light ? "Switch to dark theme" : "Switch to light theme"
-    );
+    <section class="resume-card">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          <polyline points="14,2 14,8 20,8" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+          <line x1="16" y1="17" x2="8" y2="17" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+          <polyline points="10,9 9,9 8,9" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+        Summary
+      </h2>
+      <p>Software engineer and founder with hands-on experience building and operating production web systems. Strong background in full-stack development, backend APIs, real-time systems, and security-aware engineering, with published research in AI and system vulnerabilities. Actively building scalable platforms at the intersection of applied AI, system design, and developer tooling.</p>
+    </section>
 
-    themeButton.innerHTML = light
-      ? `<svg viewBox="0 0 24 24" aria-hidden="true">
-           <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
-         </svg>`
-      : `<svg viewBox="0 0 24 24" aria-hidden="true">
-           <circle cx="12" cy="12" r="4"></circle>
-           <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l1.41 1.41"></path>
-         </svg>`;
-  }
+    <section class="resume-card">
+      <h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0ea5e9">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+        </svg>
+        Education
+      </h2>
 
-  themeButton.addEventListener("click", () => {
-    setTheme(root.dataset.theme === "light" ? "dark" : "light");
-  });
-</script>
+      <div class="edu-top">
+        <span class="edu-badge">AUG 2025 – PRESENT</span>
+        <span class="edu-degree">Bachelor of Computer Applications (BCA)</span>
+      </div>
 
+      <div class="edu-uni">Maharishi Dayanand University, Rohtak, India</div>
+      <div class="edu-line">Coursework: Programming in C, Web Development, Data Structures and Computer Networks</div>
+      <div class="edu-line">Focused on independent projects in backend systems, applied AI, and full-stack engineering</div>
+    </section>
+
+    <section class="resume-card">
+      <h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0ea5e9">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+        </svg>
+        Technical Skills
+      </h2>
+
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0ea5e9">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        Full-Stack &amp; Backend Engineering
+      </h3>
+      <ul>
+        <li>Full-Stack Web Development (MERN)</li>
+        <li>React.js and Next.js</li>
+        <li>Node.js and Express.js</li>
+        <li>RESTful API Design</li>
+        <li>Authentication and Authorization (JWT, role-based access)</li>
+        <li>Database Design and Integration (MongoDB SQL)</li>
+        <li>System Design for scalable web applications</li>
+      </ul>
+
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0ea5e9">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+        </svg>
+        Programming Languages
+      </h3>
+      <ul>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Python</li>
+        <li>C++</li>
+      </ul>
+
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0ea5e9">
+          <path d="M12 8V4H8"></path>
+          <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+          <path d="M2 14h2"></path>
+          <path d="M20 14h2"></path>
+          <path d="M15 13v2"></path>
+          <path d="M9 13v2"></path>
+        </svg>
+        Artificial Intelligence &amp; Automation
+      </h3>
+      <ul>
+        <li>Artificial Intelligence (AI)</li>
+        <li>AI Automation and Workflow Design</li>
+        <li>LLM-based Systems</li>
+        <li>AI Security and Model Risk Awareness</li>
+      </ul>
+
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0ea5e9">
+          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+          <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+          <path d="M3 12A9 3 0 0 0 21 12"></path>
+        </svg>
+        Tools &amp; Technologies
+      </h3>
+      <ul>
+        <li>Git and GitHub</li>
+        <li>MongoDB and SQL / SQLite</li>
+        <li>API Testing and Debugging Tools</li>
+        <li>Cloud Deployment</li>
+      </ul>
+
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#0ea5e9">
+          <path d="M3 3v18h18"></path>
+          <path d="M18 17V9"></path>
+          <path d="M13 17V5"></path>
+          <path d="M8 17v-3"></path>
+        </svg>
+        Engineering &amp; Professional Skills
+      </h3>
+      <ul>
+        <li>Systems Thinking</li>
+        <li>Production Debugging and Error Handling</li>
+        <li>Performance Optimization</li>
+        <li>Research and Technical Writing</li>
+        <li>Client and Project Management</li>
+        <li>Product-driven Engineering</li>
+      </ul>
+    </section>
+
+    <section class="resume-card" id="certifications">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        Certifications
+      </h2>
+
+      <div class="certification-list">
+        <a class="certification-link" href="https://verify.skilljar.com/c/qejtxto64dzr" target="_blank" rel="noopener noreferrer">
+          <span class="certification-title">Claude with the Anthropic API</span>
+          <span class="certification-meta">Anthropic • 2026</span>
+        </a>
+
+        <a class="certification-link" href="https://www.credly.com/badges/496c2dcd-6a9b-4b9a-bc76-558f5fb11370" target="_blank" rel="noopener noreferrer">
+          <span class="certification-title">Getting Started with Artificial Intelligence</span>
+          <span class="certification-meta">IBM SkillsBuild • 2026</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resume-card">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" fill="#0ea5e9"></path>
+        </svg>
+        Languages
+      </h2>
+      <p><strong>English:</strong> Native / Fluent</p>
+      <p><strong>Hindi:</strong> Native</p>
+    </section>
+  </main>
+
+  <footer class="resume-footer">
+    © 2026 Ayush Sharma. All rights reserved.
+  </footer>
+
+  <script>
+    const themeButton = document.getElementById("themeToggle");
+    const root = document.documentElement;
+
+    function setTheme(theme) {
+      const light = theme === "light";
+
+      root.dataset.theme = theme;
+      root.style.setProperty("--bg", light ? "#f8fafc" : "#0a0a0b");
+      root.style.setProperty("--text", light ? "#111827" : "#f5f5f5");
+      root.style.setProperty("--muted", light ? "#64748b" : "#a1a1aa");
+      root.style.setProperty("--line", light ? "#e2e8f0" : "#27272a");
+      root.style.setProperty("--card", light ? "#ffffff" : "#0a0a0b");
+
+      document.querySelector(".resume-navbar").style.background =
+        light ? "rgba(248, 250, 252, 0.92)" : "rgba(10, 10, 12, 0.88)";
+
+      themeButton.setAttribute(
+        "aria-label",
+        light ? "Switch to dark theme" : "Switch to light theme"
+      );
+
+      themeButton.innerHTML = light
+        ? `<svg viewBox="0 0 24 24" aria-hidden="true">
+             <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+           </svg>`
+        : `<svg viewBox="0 0 24 24" aria-hidden="true">
+             <circle cx="12" cy="12" r="4"></circle>
+             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+           </svg>`;
+    }
+
+    themeButton.addEventListener("click", () => {
+      setTheme(root.dataset.theme === "light" ? "dark" : "light");
+    });
+  </script>
 </body>
 </html>
