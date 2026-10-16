@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayush Sharma — Software Engineer &amp; Founder</title>
+  <meta name="description" content="Ayush Sharma is a software engineer focused on AI, full-stack development, backend systems, and building practical software products.">
+  <meta name="author" content="Ayush Sharma">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ayushsharma.onrender.com">
+  <meta property="og:title" content="Ayush Sharma — Software Engineer &amp; Founder">
+  <meta property="og:description" content="Software engineer focused on AI, full-stack development, backend systems, and practical software products.">
+  <meta property="og:url" content="https://ayushsharma.onrender.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="./ayush.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0a0b;
+      --surface: #0f0f11;
+      --text: #f5f5f5;
+      --muted: #a1a1aa;
+      --line: #27272a;
+      --pill: #27272a;
+      --accent: #0ea5e9;
+      --nav-bg: rgba(10, 10, 12, 0.82);
+      --shadow: rgba(0, 0, 0, 0.15);
+    }
+
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --text: #111113;
+      --muted: #62626b;
+      --line: #e4e4e7;
+      --pill: #f0f0f2;
+      --accent: #087fb5;
+      --nav-bg: rgba(255, 255, 255, 0.86);
+      --shadow: rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.82;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .site-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: min(100% - 48px, 896px);
+      margin-inline: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-inner {
+  position: relative;
+  width: min(100% - 48px, 896px);
+  min-height: 70px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+    .brand {
+      color: var(--text);
+      font-family: Outfit, Inter, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+     .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+}
+
+    .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  white-space: nowrap;
+}
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .icon-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      padding: 8px;
+      color: var(--muted);
+      background: transparent;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .icon-button:hover {
+      color: var(--text);
+      background: var(--pill);
+    }
+
+    .icon-button svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
+      gap: 44px;
+      align-items: start;
+      padding: 76px 0 84px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Outfit, Inter, sans-serif;
+      line-height: 1.22;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(40px, 6.5vw, 60px);
+      letter-spacing: -1.3px;
+      font-weight: 700;
+    }
+
+    .role {
+      margin: 14px 0 24px;
+      color: var(--muted);
+      font-size: 21px;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      max-width: 230px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--pill);
+    }
+
+    .section {
+      padding: 54px 0;
+      border-top: 1px solid var(--line);
+      transition: border-color 0.3s ease;
+    }
+
+    .section-title {
+      margin: 0 0 26px;
+      font-size: clamp(28px, 4vw, 36px);
+    }
+
+    .section-content {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .section-content p {
+      margin: 0 0 18px;
+    }
+
+    .section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+    }
+
+    .skill-group h3 {
+      margin: 0 0 16px;
+      font-size: 18px;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .pills span {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--pill);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      display: block;
+      min-width: 0;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px var(--shadow);
+      transition: border-color 0.2s ease, background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .card-title {
+      display: block;
+      color: var(--accent);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .card-meta {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+    }
+
+    .contact-links a:hover {
+      color: var(--accent);
+    }
+
+    .contact-links svg {
+      width: 21px;
+      height: 21px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 30px 24px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .footer p {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0;
+    }
+
+    @media (max-width: 760px) {
+      .container,
+      .nav-inner {
+        width: min(100% - 36px, 896px);
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .mobile-nav {
+        display: none;
+        padding: 8px 18px 18px;
+        background: var(--nav-bg);
+        border-top: 1px solid var(--line);
+      }
+
+      .mobile-nav.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mobile-nav a {
+        padding: 10px 0;
+        color: var(--muted);
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 48px 0 56px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-image img {
+        max-width: 180px;
+      }
+
+      .section {
+        padding: 42px 0;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-shell">
+
+    <header class="navbar">
+      <div class="nav-inner">
+
+    
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="./resume.html">Resume</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            id="themeToggle"
+            class="icon-button"
+            type="button"
+            aria-label="Switch to light theme"
+            title="Switch theme"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+          </button>
+
+          <button
+            id="menuToggle"
+            class="icon-button menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="./resume.html">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="container">
+
+      <section id="home" class="hero">
+        <div>
+          <h1>Ayush Sharma</h1>
+
+          <p class="role">Software Engineer &amp; Founder</p>
+
+          <p class="hero-copy">
+            Software Engineer and Founder, building AI-powered applications
+            and modern web systems. Currently developing real-world projects
+            focused on applied AI, intelligent tools, and scalable solutions.
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="./ayush.jpeg"
+            alt="Ayush Sharma"
+            width="230"
+            height="230"
+            fetchpriority="high"
+          >
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2 class="section-title">About</h2>
+
+        <div class="section-content">
+          <p>
+            I am a Software Engineer focused on artificial intelligence and
+            building software that solves real-world problems. I am interested
+            in the engineering behind useful products — understanding problems,
+            exploring possible solutions, and turning ideas into practical,
+            reliable, and well-designed applications.
+          </p>
+
+          <p>
+            My inclination toward backend work and system design is natural.
+            APIs, real-time features, authentication flows and data-backed
+            systems that need correctness and reliability are my favorite
+            areas. It is my passion to figure out how things fail, pinpoint
+            the locations of edge cases, and come up with ways of designing
+            systems that remain comprehensible rather than fragile throughout
+            their life cycles. I am not much into “black box” solutions; I
+            prefer having a full understanding of what is happening behind
+            the curtains.
+          </p>
+
+          <p>
+            I have dedicated time to researching and experimenting with AI and
+            security from a practical perspective. Research into AI
+            vulnerabilities and machine learning applications has influenced
+            me to view AI as a human-centered product. I am cautious about
+            automation, preferring controlled outputs, defined boundaries,
+            and predictable behavior rather than hype-driven integrations.
+          </p>
+
+          <p>
+            Currently, I'm actively developing a product, working across its
+            core systems, technical architecture, and implementation. My focus
+            is on engineering robust functionality, solving complex technical
+            challenges, and refining the product through continuous
+            development. I'm committed to building something reliable,
+            scalable, and ready for real-world use.
+          </p>
+
+          <p>
+            Apart from engineering, I'm passionate about esports and
+            competitive gaming. Attending an esports tournament gave me
+            firsthand exposure to the competitive gaming environment and
+            strengthened my interest in esports, team coordination, and the
+            discipline required to perform at a higher level.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-group">
+            <h3>Languages &amp; Technologies</h3>
+
+            <div class="pills">
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>Python</span>
+              <span>Go</span>
+              <span>Java</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Node.js</span>
+              <span>PostgreSQL</span>
+              <span>MongoDB</span>
+              <span>Docker</span>
+              <span>AWS</span>
+              <span>Git</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Areas of Interest</h3>
+
+            <div class="pills">
+              <span>Full-Stack Development</span>
+              <span>Backend Engineering</span>
+              <span>System Design</span>
+              <span>Applied AI</span>
+              <span>Automation</span>
+              <span>Security Research</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="certifications" class="section">
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="card-grid">
+
+          <a
+            class="card"
+            href="https://verify.skilljar.com/c/qejtxto64dzr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="card-title">Claude with the Anthropic API</span>
+            <span class="card-meta">Anthropic • 2026</span>
+          </a>
+
+          <a
+            class="card"
+            href="https://www.credly.com/badges/496c2dcd-6a9b-4b9a-bc76-558f5fb11370"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="card-title">
+              Getting Started with Artificial Intelligence
+            </span>
+            <span class="card-meta">IBM SkillsBuild • 2026</span>
+          </a>
+
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-links">
+
+          <a href="mailto:ayusharma.me@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              <path d="m3 7 9 6 9-6"></path>
+            </svg>
+            Email
+          </a>
+
+          <a
+            href="https://github.com/ayusharmax"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5a3 3 0 0 0-.8-2.3c2.8-.3 5.8-1.4 5.8-6.2a4.8 4.8 0 0 0-1.3-3.3 4.5 4.5 0 0 0-.1-3.3s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.5 4.5 0 0 0-.1 3.3A4.8 4.8 0 0 0 4 9.7c0 4.8 3 5.9 5.8 6.2a3 3 0 0 0-.8 2.3V21"></path>
+            </svg>
+            GitHub
+          </a>
+
+          <a
+            href="https://linkedin.com/in/ayusharma13"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            LinkedIn
+          </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Ayush Sharma. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.getElementById("themeToggle");
+      const menuButton = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+
+      const sunIcon = `
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2"></path>
+    <path d="M12 20v2"></path>
+    <path d="m4.93 4.93 1.41 1.41"></path>
+    <path d="m17.66 17.66 1.41 1.41"></path>
+    <path d="M2 12h2"></path>
+    <path d="M20 12h2"></path>
+    <path d="m6.34 17.66-1.41 1.41"></path>
+    <path d="m19.07 4.93-1.41 1.41"></path>
+  </svg>
+`;
+
+const moonIcon = `
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.463.402.807a6.5 6.5 0 0 0 8.268 8.268c.344-.215.829-.003.803.397Z"></path>
+  </svg>
+`;
+      function setTheme(theme) {
+        root.dataset.theme = theme;
+
+        const isDark = theme === "dark";
+
+        if (themeButton) {
+          themeButton.innerHTML = isDark ? sunIcon : moonIcon;
+
+          themeButton.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light theme" : "Switch to dark theme"
+          );
+
+          themeButton.title = isDark
+            ? "Switch to light theme"
+            : "Switch to dark theme";
+        }
+
+        try {
+          localStorage.setItem("theme", theme);
+        } catch (error) {
+          // Storage may be unavailable.
+        }
+      }
+
+      let savedTheme = "dark";
+
+      try {
+        savedTheme = localStorage.getItem("theme") || "dark";
+      } catch (error) {
+        // Keep the default theme.
+      }
+
+      setTheme(savedTheme === "light" ? "light" : "dark");
+
+      if (themeButton) {
+        themeButton.addEventListener("click", () => {
+          const nextTheme =
+            root.dataset.theme === "dark" ? "light" : "dark";
+
+          setTheme(nextTheme);
+        });
+      }
+
+      if (menuButton && mobileNav) {
+        menuButton.addEventListener("click", () => {
+          const isOpen = mobileNav.classList.toggle("open");
+
+          menuButton.setAttribute("aria-expanded", String(isOpen));
+
+          menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu"
+          );
+
+          menuButton.innerHTML = isOpen
+            ? `
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 6 6 18M6 6l12 12"></path>
+              </svg>
+            `
+            : `
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            `;
+        });
+
+        mobileNav.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileNav.classList.remove("open");
+
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open menu");
+
+            menuButton.innerHTML = `
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            `;
+          });
+        });
+      }
+
+      // Scroll to the correct section when opening index.html#section.
+      function scrollToHash() {
+        if (!window.location.hash) {
+          return;
+        }
+
+        const id = decodeURIComponent(
+          window.location.hash.slice(1)
+        );
+
+        const target = document.getElementById(id);
+
+        if (!target) {
+          return;
+        }
+
+        if (
+          window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches
+        ) {
+          target.scrollIntoView();
+        } else {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      }
+
+      if (document.readyState === "complete") {
+        requestAnimationFrame(scrollToHash);
+      } else {
+        window.addEventListener(
+          "load",
+          () => requestAnimationFrame(scrollToHash),
+          { once: true }
+        );
+      }
+    })();
+  </script>
+</body>
+</html>
