@@ -138,5 +138,8 @@ def delete_message(message_id: int):
 @app.get("/", include_in_schema=False)
 def home():
     return FileResponse(STATIC_DIR / "index.html")
-
+@app.get("/resume", include_in_schema=False)
+@app.get("/resume.html", include_in_schema=False)
+def resume():
+    return FileResponse(STATIC_DIR / "resume.html")
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
