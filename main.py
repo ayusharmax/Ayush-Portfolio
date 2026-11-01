@@ -162,13 +162,11 @@ def robots_txt():
         media_type="text/plain"
     )
 
-
 @app.get("/sitemap.xml", include_in_schema=False)
 def sitemap_xml():
     return FileResponse(
         STATIC_DIR / "sitemap.xml",
         media_type="application/xml"
     )
-
 
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
