@@ -155,7 +155,7 @@ def resume():
 def profile_image():
     return FileResponse(STATIC_DIR / "ayush.jpeg")
 
- @app.get("/robots.txt", include_in_schema=False)
+@app.get("/robots.txt", include_in_schema=False)
 def robots_txt():
     return FileResponse(
         STATIC_DIR / "robots.txt",
@@ -169,6 +169,6 @@ def sitemap_xml():
         STATIC_DIR / "sitemap.xml",
         media_type="application/xml"
     )
- 
+
+
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
- 
