@@ -151,11 +151,24 @@ def resume():
     return FileResponse(STATIC_DIR / "resume.html")
  
  
-# Backup: agar kahin purana "ayush.jpeg" path reh gaya ho toh bhi photo/favicon dikhe
 @app.get("/ayush.jpeg", include_in_schema=False)
 def profile_image():
     return FileResponse(STATIC_DIR / "ayush.jpeg")
- 
+
+ @app.get("/robots.txt", include_in_schema=False)
+def robots_txt():
+    return FileResponse(
+        STATIC_DIR / "robots.txt",
+        media_type="text/plain"
+    )
+
+
+@app.get("/sitemap.xml", include_in_schema=False)
+def sitemap_xml():
+    return FileResponse(
+        STATIC_DIR / "sitemap.xml",
+        media_type="application/xml"
+    )
  
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
  
